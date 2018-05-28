@@ -1,0 +1,36 @@
+#!/bin/bash
+
+if [[ $USER != 'root' ]]; then
+	echo "Maaf, Anda harus menjalankan ini sebagai root"
+	exit
+fi
+
+MYIP=$(wget -qO- ipv4.icanhazip.com)
+
+# go to root
+cd
+
+# check registered ip
+
+
+disable-user-expire
+clear
+
+echo "---------------------------- DAFTAR AKUN SSH ACTIVE --------------------------------"
+
+if [[ $vps = "soned" ]]; then
+	echo "                     ALL SUPPORTED BY JUCKY VENGEANCE                            "
+	echo "               "
+else
+	echo "                     ALL SUPPORTED BY JUCKY VENGEANCE                           "
+	echo "                "
+fi
+
+	echo "                 "
+echo ""
+
+cat /root/activeuser.txt
+echo ""
+
+cd ~/
+rm -f /root/IP
