@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+MYIP=$(wget -qO- ipv4.icanhazip.com)
+
+
+
+echo "---------------------------- MEMBUAT AKUN  PPTP VPN ----------------------------"
+
+if [[ $vps = "soned" ]]; then
+	echo "                     ALL SUPPORTED BY JUCKY VENGEANCE                           "
+	echo "               "
+else
+	echo "                     ALL SUPPORTED BY JUCKY VENGEANCE                           "
+	echo "               "
+fi
+
+	echo "                 "
+echo ""
+
+read -p "Isikan username baru: " username
+read -p "Isikan password akun [$username]: " password
+
+echo "$username pptpd $password *" >> /etc/ppp/chap-secrets
+
+echo ""
+echo "-----------------------------------"
+echo "Data Login PPTP VPN:"
+echo "-----------------------------------"
+echo "Host/IP: $MYIP"
+echo "Username: $username"
+echo "Password: $password"
+echo "-----------------------------------"
+
+cd ~/
+rm -f /root/IP
