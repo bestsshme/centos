@@ -1,0 +1,25 @@
+#!/bin/bash
+
+MYIP=$(wget -qO- ipv4.icanhazip.com)
+
+disable-user-expire
+clear
+
+echo "---------------------------- DAFTAR AKUN SSH EXPIRE ----------------------------"
+
+if [[ $vps = "soned" ]]; then
+	echo "                     ALL SUPPORTED BY JUCKY VENGEANCE                            "
+	echo "               "
+else
+	echo "                     ALL SUPPORTED BY JUCKY VENGEANCE                            "
+	echo "                "
+fi
+
+	echo "               "
+echo ""
+
+cat /root/expireduser.txt
+echo ""
+
+cd ~/
+rm -f /root/IP
