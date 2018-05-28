@@ -1,35 +1,35 @@
 #CENTOS SCRIPT
 yum update
 cd /usr/bin
-#wget http://centos6.esy.es/file/badvpn-udpgw
+#wget https://raw.githubusercontent.com/bestsshme/centos/master/badvpn-udpgw
 #chmod 755 badvpn-udpgw
 yum install nano
 #nano /etc/rc.local
 cd /usr/bin
-wget http://centos6.esy.es/file/menu && chmod +x menu
-wget http://centos6.esy.es/file/badvpn-udpgw && chmod +x badvpn-udpgw
-wget http://centos6.esy.es/file/banned-user && chmod +x banned-user
-wget http://centos6.esy.es/file/basename && chmod +x basename
-wget http://centos6.esy.es/file/benchmark && chmod +x benchmark
-wget http://centos6.esy.es/file/bmon && chmod +x bmon
-wget http://centos6.esy.es/file/delete-user-expire && chmod +x delete-user-expire
-wget http://centos6.esy.es/file/disable-user-expire && chmod +x disable-user-expire
-wget http://centos6.esy.es/file/dropmon && chmod +x dropmon
-wget http://centos6.esy.es/file/re-drop && chmod +x re-drop
-wget http://centos6.esy.es/file/test-speed && chmod +x test-speed
-wget http://centos6.esy.es/file/user-add && chmod +x user-add
-wget http://centos6.esy.es/file/user-add-pptp && chmod +x user-add-pptp
-wget http://centos6.esy.es/file/user-del && chmod +x user-del
-wget http://centos6.esy.es/file/user-expire-list && chmod +x user-expire-list
-wget http://centos6.esy.es/file/user-gen && chmod +x user-gen
-wget http://centos6.esy.es/file/user-limit && chmod +x user-limit
-wget http://centos6.esy.es/file/user-list && chmod +x user-list
-wget http://centos6.esy.es/file/user-login && chmod +x user-login
-wget http://centos6.esy.es/file/user-pass && chmod +x user-pass
-wget http://centos6.esy.es/file/user-renew && chmod +x user-renew
-wget http://centos6.esy.es/file/users && chmod +x users
-wget http://centos6.esy.es/file/user-active-list && chmod +x user-active-list
-wget http://pencabulmisteri.esy.es/centos/test.py && chmod +x test.py
+wget https://raw.githubusercontent.com/bestsshme/centos/master/menu && chmod +x menu
+wget https://raw.githubusercontent.com/bestsshme/centos/master/badvpn-udpgw && chmod +x badvpn-udpgw
+wget https://raw.githubusercontent.com/bestsshme/centos/master/banned-user && chmod +x banned-user
+wget https://raw.githubusercontent.com/bestsshme/centos/master/basename && chmod +x basename
+wget https://raw.githubusercontent.com/bestsshme/centos/master/benchmark && chmod +x benchmark
+wget https://raw.githubusercontent.com/bestsshme/centos/master/bmon && chmod +x bmon
+wget https://raw.githubusercontent.com/bestsshme/centos/master/delete-user-expire && chmod +x delete-user-expire
+wget https://raw.githubusercontent.com/bestsshme/centos/master/disable-user-expire && chmod +x disable-user-expire
+wget https://raw.githubusercontent.com/bestsshme/centos/master/dropmon && chmod +x dropmon
+wget hhttps://raw.githubusercontent.com/bestsshme/centos/master/re-drop && chmod +x re-drop
+wget https://raw.githubusercontent.com/bestsshme/centos/master/test-speed && chmod +x test-speed
+wget hhttps://raw.githubusercontent.com/bestsshme/centos/master/user-add && chmod +x user-add
+wget https://raw.githubusercontent.com/bestsshme/centos/master/user-add-pptp && chmod +x user-add-pptp
+wget https://raw.githubusercontent.com/bestsshme/centos/master/user-del && chmod +x user-del
+wget https://raw.githubusercontent.com/bestsshme/centos/master/user-expire-list && chmod +x user-expire-list
+wget https://raw.githubusercontent.com/bestsshme/centos/master/user-gen && chmod +x user-gen
+wget https://raw.githubusercontent.com/bestsshme/centos/master/user-limit && chmod +x user-limit
+wget https://raw.githubusercontent.com/bestsshme/centos/master/user-list && chmod +x user-list
+wget https://raw.githubusercontent.com/bestsshme/centos/master/user-login && chmod +x user-login
+wget https://raw.githubusercontent.com/bestsshme/centos/master/user-pass && chmod +x user-pass
+wget https://raw.githubusercontent.com/bestsshme/centos/master/user-renew && chmod +x user-renew
+wget https://raw.githubusercontent.com/bestsshme/centos/master/users && chmod +x users
+wget https://raw.githubusercontent.com/bestsshme/centos/master/user-active-list && chmod +x user-active-list
+wget hhttps://raw.githubusercontent.com/bestsshme/centos/master/test.py && chmod +x test.py
 cd
 #install dropbear
 rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
@@ -41,7 +41,6 @@ echo "/bin/false" >> /etc/shells
 service dropbear restart
 #install webmin
 wget http://prdownloads.sourceforge.net/webadmin/webmin-1.710-1.noarch.rpm
-yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
 rpm -U webmin-1.710-1.noarch.rpm
 nano /etc/webmin/miniserv.conf
 service webmin restart
