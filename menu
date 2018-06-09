@@ -6,10 +6,6 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 
 	echo "--------------- Selamat datang di Server - IP: $MYIP ---------------"
 	echo "--------------------#============================#------------------"
-	echo "                    # script by: Jucky vengeance #                  "
-	echo "                    # Whatsapp : 083898587500    #                  "
-	echo "                    # Facebook : Juckyvengeance  #                  "
-	echo "                    #============================#                  "
 	echo ""
 	cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
 	cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
@@ -41,7 +37,7 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 	echo -e "\e[031;1m13\e[0m) Disable Akun Expire (\e[34;1mdisable-user-expire\e[0m)"
 	echo -e "\e[031;1m14\e[0m) Delete Akun Expire (\e[34;1mdelete-user-expire\e[0m)"
 	echo -e "\e[031;1m15\e[0m) Banned Akun (\e[34;1mbanned-user\e[0m)"
-	echo -e "\e[031;1m16\e[0m) Restart Dropbear (\e[34;1re-drop\e[0m)"
+	echo -e "\e[031;1m16\e[0m) Restart Dropbear (\e[34;1mre-drop\e[0m)"
 	echo -e "\e[031;1m17\e[0m) Memory Usage (\e[34;1mps-mem\e[0m)"
 	echo -e "\e[031;1m18\e[0m) Speedtest (\e[34;1mtest-speed\e[0m)"
 	echo -e "\e[031;1m19\e[0m) Benchmark (\e[34;1mbenchmark\e[0m)"
