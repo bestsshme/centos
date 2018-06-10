@@ -59,7 +59,6 @@ echo "screenfetch" >> .bash_profile
 #squid proxy
 yum -y update
 yum -y install squid
-mv /etc/squid/squid.conf /etc/squid.conf.bak
 nano /etc/squid/squid.conf
 chkconfig squid on
 service squid start
