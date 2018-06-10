@@ -74,4 +74,4 @@ echo " #=====================================================# "
 echo ""
 echo "---------------- SILAHKAN REBOOT VPS ANDA --------------"  | tee -a log-install.txt
 
-rm centos6.sh
+rm centos.sh
