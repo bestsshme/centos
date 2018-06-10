@@ -2,7 +2,7 @@
 
 
 MYIP=$(wget -qO- ipv4.icanhazip.com)
-echo "------------------------------- MEMBUAT AKUN SSH & ovpn -------------------------------"
+echo "----------- MEMBUAT AKUN SSH --------------"
 
 if [[ $vps = "soned" ]]; then
 	echo "                                                "
@@ -15,14 +15,14 @@ fi
 	echo "                   "
 echo ""
 
-read -p "Isikan username: " username
+read -p "Username: " username
 
 egrep "^$username" /etc/passwd >/dev/null
 if [ $? -eq 0 ]; then
 	echo "Username [$username] sudah ada!"
 	exit 1
 else
-	read -p "Isikan password akun [$username]: " password
+	read -p "Pasword: " password
 	read -p "Berapa hari akun [$username] aktif: " AKTIF
 
 	today="$(date +"%Y-%m-%d")"
@@ -34,16 +34,16 @@ else
 	echo "-----------------------------------"
 	echo "Data Login:"
 	echo "-----------------------------------"
-	echo "Host/IP: $MYIP"
-	echo "Dropbear Port: 443, 110, 109"
-	echo "OpenSSH Port: 22, 143"
-	echo "Squid Proxy: 8080, 3128"
+	echo "Host/IP : $MYIP"
 	echo "Username: $username"
 	echo "Password: $password"
-	echo "Valid s/d: $(date -d "$AKTIF days" +"%d-%m-%Y")"
+	echo "SSL/TLS : 443"
+	echo "Dropbear: 80, 777"
+	echo "Openssh : 22"
+	echo "Aktif   : $(date -d "$AKTIF days" +"%d-%m-%Y")"
 	echo "-----------------------------------"
 	echo ""
-	echo "     script by: jucky vengeance     "	
+	echo "Script by: JAGOANSSH.COM"	
 fi
 
 cd ~/
