@@ -63,14 +63,13 @@ nano /etc/squid/squid.conf
 chkconfig squid on
 service squid start
 netstat -grep | squid
-echo -e "\e[1;33;44m[ script by: jucky vengeance ]\e[0m"  | tee -a log-install.txt
+echo -e "\e[1;33;44m[      script by: JAGOANSSH.COM        ]\e[0m"  | tee -a log-install.txt
 echo " #-----------------------------------------------------# "
 echo " #                INSTALISASI SELESAI                  # "
 echo " #                VPS SIAP DI GUNAKAN                  # "
-echo " #              SCRIPT BY JUCKY VENGEANCE              # "
+echo " #              SCRIPT BY JAGOANSSH.COM                # "
 echo " #                                                     # "
-echo " #                  WA: 083898587500                   # "
-echo " #             FB: fb.com/Juckyvengeance               # "
+echo " #                CENTOS 6 32 &6 4 BIT                 # "
 echo " #=====================================================# "
 echo ""
 echo "---------------- SILAHKAN REBOOT VPS ANDA --------------"  | tee -a log-install.txt
