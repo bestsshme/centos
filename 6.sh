@@ -316,6 +316,7 @@ echo "" | tee -a log-install.txt
 echo "Script"  | tee -a log-install.txt
 echo "------"  | tee -a log-install.txt
 
-echo "---------------- SILAHKAN REBOOT VPS ANDA --------------"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
+echo "---------- SILAHKAN REBOOT VPS ANDA -----------"  | tee -a log-install.txt
 echo "==============================================="  | tee -a log-install.txt
+
+rm 6.sh
