@@ -110,7 +110,7 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 		;;
 		14)
 		clear
-		peedtest --share
+		speedtest --share
 		exit
 		;;
 		15)
