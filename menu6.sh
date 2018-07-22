@@ -22,8 +22,8 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 	echo -e "\e[032;1mSystem uptime:\e[0m $up"
 	echo "------------------------------------------------------------------------------"
 	echo "Apa yang ingin Anda lakukan?"
-	echo -e "\e[031;1m 1\e[0m) Buat Akun SSH/OpenVPN (\e[34;1musernew\e[0m)"
-	echo -e "\e[031;1m 2\e[0m) Perpanjang Akun (\e[34;1mrenew\e[0m)"
+	echo -e "\e[031;1m 1\e[0m) Buat Akun SSH/OpenVPN (\e[34;1muser-add\e[0m)"
+	echo -e "\e[031;1m 2\e[0m) Perpanjang Akun (\e[34;1muser-renew\e[0m)"
 	echo -e "\e[031;1m 3\e[0m) Cek Login (\e[34;1muserlogin\e[0m)"
 	echo -e "\e[031;1m 4\e[0m) User Login (\e[34;1muserlog\e[0m)"
 	echo -e "\e[031;1m 5\e[0m) Cek Performa VPS (\e[34;1mbench\e[0m)"
@@ -44,12 +44,12 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 	case $option1 in
 		1)
 		clear
-		usernew
+		user-add
 		exit
 		;;
 		2)
 		clear
-		renew
+		user-renew
 		exit
 		;;
 		3)
@@ -93,9 +93,9 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 		delete-user-expire
 		exit
 		;;
-    10)
+		11)
 		clear
-		banned
+		banned-user
 		exit
 		;;
 		12)
@@ -108,12 +108,12 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 		service stunnel restart
 		exit
 		;;
-    14)
+		14)
 		clear
 		peedtest --share
 		exit
 		;;
-    15)
+		15)
 		clear
 		reboot
 		exit
