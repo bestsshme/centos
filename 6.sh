@@ -171,6 +171,7 @@ chkconfig sshd on
 yum -y install dropbear
 echo "OPTIONS=\"-p 80 -p 777\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
+wget https://raw.githubusercontent.com/bestsshme/debssl/master/banner.net
 service dropbear restart
 chkconfig dropbear on
 
