@@ -1,5 +1,5 @@
 #!/bin/bash
-#edited by kerdunet.top 
+
 
 # initialisasi var
 OS=`uname -p`;
@@ -163,13 +163,13 @@ LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
 # setting port ssh
 cd
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
-sed -i 's/#Port 22/Port  22/g' /etc/ssh/sshd_config
+wget -O /etc/ssh/sshd_config "https://raw.githubusercontent.com/bestsshme/debssl/master/sshd_config"
 service sshd restart
 chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-b /etc/banner.net -p 80 -p 777\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 80 -p 777\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
@@ -250,7 +250,6 @@ chmod +x speedtest_cli.py
 chmod +x bench
 chmod +x mem
 chmod +x hapus
-chmod +x menu6.sh
 chmod +x banned-user
 chmod +x delete-user-expire
 chmod +x user-limit
