@@ -230,12 +230,12 @@ wget -O hapus "https://raw.githubusercontent.com/kerdunet/centos/master/user-del
 echo "cat log-install.txt" | tee info
 echo "python /usr/bin/speedtest.py --share" | tee speedtest
 wget -O speedtest "https://raw.githubusercontent.com/kerdunet/centos/master/speedtest_cli.py"
-wget https://raw.githubusercontent.com/bestsshme/centos/master/user-add && chmod +x user-add
-wget https://raw.githubusercontent.com/bestsshme/centos/master/user-renew && chmod +x user-renew
-wget https://raw.githubusercontent.com/bestsshme/centos/master/delete-user-expire && chmod +x delete-user-expire
-wget https://raw.githubusercontent.com/bestsshme/centos/master/user-limit && chmod +x user-limit
-wget https://raw.githubusercontent.com/bestsshme/centos/master/banned-user && chmod +x banned-user
-wget https://raw.githubusercontent.com/bestsshme/centos/master/menu6.sh && chmod +x menu6.sh
+wget -O user-add "https://raw.githubusercontent.com/bestsshme/centos/master/user-add"
+wget -O user-renew "https://raw.githubusercontent.com/bestsshme/centos/master/user-renew"
+wget -O delete-user-expire "https://raw.githubusercontent.com/bestsshme/centos/master/delete-user-expire"
+wget -O "https://raw.githubusercontent.com/bestsshme/centos/master/user-limit"
+wget -O banned-user "https://raw.githubusercontent.com/bestsshme/centos/master/banned-user"
+wget -O menu "https://raw.githubusercontent.com/bestsshme/centos/master/menu6.sh"
 
 # sett permission
 chmod +x userlogin
@@ -250,7 +250,13 @@ chmod +x speedtest_cli.py
 chmod +x bench
 chmod +x mem
 chmod +x hapus
-
+chmod +x menu6.sh
+chmod +x banned-user
+chmod +x delete-user-expire
+chmod +x user-limit
+chmod +x user-renew
+chmod +x user-add
+chmod +x menu
 
 # cron
 cd
