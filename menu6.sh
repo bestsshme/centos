@@ -106,11 +106,12 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 		;;
 		13)
 		clear
-		./tls
+		tls
 		exit
 		;;
 		14)
 		clear
+		service stunnel start
 		service stunnel restart
 		exit
 		;;
