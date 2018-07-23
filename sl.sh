@@ -36,7 +36,11 @@ openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 
 #konfigurasi stunnel
-wget -O /etc/rc.d/init.d/stunnel ''LINK''
+wget -O /etc/rc.d/init.d/stunnel "https://raw.githubusercontent.com/bestsshme/centos/master/st"
+
+#pemision
+chmod +x /etc/rc.d/init.d/stunnel
+/sbin/chkconfig --add stunnel
 
 #restart
 /etc/init.d/stunnel restart
