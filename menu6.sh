@@ -34,9 +34,10 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 	echo -e "\e[031;1m10\e[0m) Delete Akun Expire (\e[34;1mdelete-user-expire\e[0m)"
 	echo -e "\e[031;1m11\e[0m) Banned Akun (\e[34;1mbanned-user\e[0m)"
 	echo -e "\e[031;1m12\e[0m) Restart Dropbear (\e[34;1mre-drop\e[0m)"
-	echo -e "\e[031;1m13\e[0m) Restart SSL/TLS (\e[34;1mstunnnel\e[0m)"
-	echo -e "\e[031;1m14\e[0m) Speedtest (\e[34;1mtest-speed\e[0m)"
-	echo -e "\e[031;1m15\e[0m) Reboot Server (\e[34;1mreboot\e[0m)"
+	echo -e "\e[031;1m13\e[0m) Aktifkan SSL/TLS(\e[34;1mSSL/TLS\e[0m)"
+	echo -e "\e[031;1m14\e[0m) Restart SSL/TLS (\e[34;1mstunnnel\e[0m)"
+	echo -e "\e[031;1m15\e[0m) Speedtest (\e[34;1mtest-speed\e[0m)"
+	echo -e "\e[031;1m16\e[0m) Reboot Server (\e[34;1mreboot\e[0m)"
 	echo ""
 	echo -e "\e[031;1m x\e[0m) Exit"
 	echo ""
@@ -105,15 +106,20 @@ MYIP=$(wget -qO- ipv4.icanhazip.com)
 		;;
 		13)
 		clear
-		service stunnel restart
+		./tls
 		exit
 		;;
 		14)
 		clear
-		speedtest --share
+		service stunnel restart
 		exit
 		;;
 		15)
+		clear
+		speedtest --share
+		exit
+		;;
+		16)
 		clear
 		reboot
 		exit
