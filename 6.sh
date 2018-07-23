@@ -66,12 +66,6 @@ yum -y --enablerepo=rpmforge install axel sslh ptunnel unrar
 service exim stop
 chkconfig exim off
 
-# setting vnstat
-vnstat -u -i eth0
-echo "MAILTO=root" > /etc/cron.d/vnstat
-echo "*/5 * * * * root /usr/sbin/vnstat.cron" >> /etc/cron.d/vnstat
-service vnstat restart
-chkconfig vnstat on
 
 # install screenfetch
 cd
@@ -141,28 +135,10 @@ sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/
 chmod +x /usr/bin/badvpn-udpgw
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 
-# install mrtg
-cd /etc/snmp/
-wget -O /etc/snmp/snmpd.conf "https://raw.githubusercontent.com/kerdunet/centos/master/conf/snmpd.conf"
-wget -O /root/mrtg-mem.sh "https://raw.githubusercontent.com/kerdunet/centos/master/conf/mrtg-mem.sh"
-chmod +x /root/mrtg-mem.sh
-service snmpd restart
-chkconfig snmpd on
-snmpwalk -v 1 -c public localhost | tail
-mkdir -p /home/vps/public_html/mrtg
-cfgmaker --zero-speed 100000000 --global 'WorkDir: /home/vps/public_html/mrtg' --output /etc/mrtg/mrtg.cfg public@localhost
-curl "https://raw.githubusercontent.com/kerdunet/centos/master/conf/mrtg.conf" >> /etc/mrtg/mrtg.cfg
-sed -i 's/WorkDir: \/var\/www\/mrtg/# WorkDir: \/var\/www\/mrtg/g' /etc/mrtg/mrtg.cfg
-sed -i 's/# Options\[_\]: growright, bits/Options\[_\]: growright/g' /etc/mrtg/mrtg.cfg
-indexmaker --output=/home/vps/public_html/mrtg/index.html /etc/mrtg/mrtg.cfg
-echo "0-59/5 * * * * root env LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg" > /etc/cron.d/mrtg
-LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
-LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
-LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
 
 # setting port ssh
 cd
-sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 143/a Banner /etc/banner.net' /etc/ssh/sshd_config
 sed -i 's/#Port 22/Port  22/g' /etc/ssh/sshd_config
 service sshd restart
 chkconfig sshd on
@@ -171,21 +147,10 @@ chkconfig sshd on
 yum -y install dropbear
 echo "OPTIONS=\"-b /etc/banner.net -p 80 -p 777\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
-wget https://raw.githubusercontent.com/bestsshme/debssl/master/banner.net
+wget -O /etc/banner.net "https://raw.githubusercontent.com/bestsshme/debssl/master/banner.net"
 service dropbear restart
 chkconfig dropbear on
 
-# install vnstat gui
-cd /home/vps/public_html/
-wget https://raw.githubusercontent.com/kerdunet/centos/master/app/vnstat_php_frontend-1.5.1.tar.gz
-tar xf vnstat_php_frontend-1.5.1.tar.gz
-rm vnstat_php_frontend-1.5.1.tar.gz
-mv vnstat_php_frontend-1.5.1 vnstat
-cd vnstat
-sed -i "s/\$iface_list = array('eth0', 'sixxs');/\$iface_list = array('eth0');/g" config.php
-sed -i "s/\$language = 'nl';/\$language = 'en';/g" config.php
-sed -i 's/Internal/Internet/g' config.php
-sed -i '/SixXS IPv6/d' config.php
 
 # install fail2ban
 cd
@@ -208,13 +173,7 @@ rm webmin-1.710-1.noarch.rpm
 service webmin restart
 chkconfig webmin on
 
-# pasang bmon
-if [ "$OS" == "x86_64" ]; then
-  wget -O /usr/bin/bmon "https://raw.githubusercontent.com/kerdunet/centos/master/conf/bmon64"
-else
-  wget -O /usr/bin/bmon "https://raw.githubusercontent.com/kerdunet/centos/master/conf/bmon"
-fi
-chmod +x /usr/bin/bmon
+
 
 # downlaod script
 cd /usr/bin
