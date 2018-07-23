@@ -138,7 +138,8 @@ screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 
 # setting port ssh
 cd
-sed -i '/Port 22/a Port 143/a Banner /etc/banner.net' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
+sed -i '/Port 143/a Banner /etc/banner.net' /etc/ssh/sshd_config
 sed -i 's/#Port 22/Port  22/g' /etc/ssh/sshd_config
 service sshd restart
 chkconfig sshd on
@@ -196,6 +197,7 @@ wget -O delete-user-expire "https://raw.githubusercontent.com/bestsshme/centos/m
 wget -O "https://raw.githubusercontent.com/bestsshme/centos/master/user-limit"
 wget -O banned-user "https://raw.githubusercontent.com/bestsshme/centos/master/banned-user"
 wget -O menu "https://raw.githubusercontent.com/bestsshme/centos/master/menu6.sh"
+wget -O tls "https://raw.githubusercontent.com/bestsshme/centos/master/sl.sh"
 
 # sett permission
 chmod +x userlogin
@@ -216,6 +218,7 @@ chmod +x user-limit
 chmod +x user-renew
 chmod +x user-add
 chmod +x menu
+chmod +x tls
 
 # cron
 cd
