@@ -43,4 +43,9 @@ chmod +x /etc/rc.d/init.d/stunnel
 /sbin/chkconfig --add stunnel
 
 #restart
+service stunnel start
 /etc/init.d/stunnel restart
+
+#pesan
+echo "SSL/TLS Berhasil di install dengan port 443"
+echo ""
