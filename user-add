@@ -2,7 +2,7 @@
 
 
 MYIP=$(wget -qO- ipv4.icanhazip.com)
-echo "----------- MEMBUAT AKUN SSH --------------"
+echo "--------- MEMBUAT AKUN ------------"
 
 if [[ $vps = "soned" ]]; then
 	echo "                                                "
@@ -42,7 +42,8 @@ else
 	echo "Openssh : 22"
 	echo "Aktif   : $(date -d "$AKTIF days" +"%d-%m-%Y")"
 	echo "-----------------------------------"
-	echo ""
+	echo "Open VPN: http://$MYIP:81/1194-client.ovpn"
+	
 	echo "Script by: JAGOANSSH.COM"	
 fi
 
